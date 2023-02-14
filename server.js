@@ -1,10 +1,9 @@
 const { Telegraf, Markup } = require('telegraf')
-const { Keyboard } = require('telegram-keyboard')
+
 
 const TOKEN = "6060145833:AAFK6ysVC7R3ULJfa6vze8RAaJugubBO5oE";
 const bot = new Telegraf(TOKEN);
 const express = require('express');
-const serverless = require('serverless-http');
 const connectDB = require('./connectDB/ConnectDB');
 const cors = require('cors');
 const productsRoutes = require('./routes/ProductRoutes');
@@ -43,21 +42,6 @@ ctx.reply('+998900243639')
 })
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 connectDB();
 const app = express()
 
@@ -70,7 +54,7 @@ app.listen(3000,()=>console.log('succes 3000 PORT'))
 
 
 bot.launch();
-module.exports.handler = serverless(app);
+
 
 
 
