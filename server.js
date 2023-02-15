@@ -3,6 +3,7 @@ const { Telegraf, Markup } = require('telegraf')
 
 const TOKEN = "6060145833:AAFK6ysVC7R3ULJfa6vze8RAaJugubBO5oE";
 const bot = new Telegraf(TOKEN);
+require('dotenv').config()
 const express = require('express');
 const connectDB = require('./connectDB/ConnectDB');
 const cors = require('cors');
@@ -50,7 +51,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cors())
 
 app.use('/Products', productsRoutes)
-app.listen(3000,()=>console.log('succes 3000 PORT'))
+app.listen(process.env.PORT,()=>console.log('succes 3000 PORT'))
 
 
 bot.launch();
