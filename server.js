@@ -43,7 +43,6 @@ ctx.reply('+998900243639')
 })
 
 
-connectDB();
 const app = express()
 
 app.use(express.json())
@@ -51,6 +50,7 @@ app.use(express.urlencoded({extended: false}))
 app.use(cors())
 
 app.use('/products', productsRoutes)
+connectDB();
 app.listen(process.env.PORT,()=>console.log('succes 3000 PORT'))
 
 
